@@ -7,8 +7,10 @@
     --dark-gray: #666;
 }
 
+/* ==== 전체 페이지 기본 스타일 ==== */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /* Google Fonts 'Noto Sans KR' 적용으로 통일 */
+    font-family: 'Noto Sans KR', sans-serif;
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -94,7 +96,7 @@ img {
 
 p {
     margin-bottom: 1em;
-    text-align: justify;
+    /* text-align: justify; 삭제 -> 기본 정렬(left)을 사용하고 필요한 곳에만 따로 지정 */
     line-height: 1.8;
 }
 
@@ -116,15 +118,11 @@ ul li {
     padding-left: 20px;
     position: relative;
 }
-ul li::before {
-    content: '⭐';
-    position: absolute;
-    left: 0;
-    color: var(--primary-color);
-    font-size: 0.9em;
-}
 
-/* ==== 인트로 섹션 전용 스타일 ==== */
+
+/* ==== 섹션별 스타일 ==== */
+
+/* -- 인트로 섹션 -- */
 #intro { text-align: center; }
 #intro p { font-size: 1.3em; color: var(--dark-gray); margin-bottom: 30px; }
 .cta-button {
@@ -142,24 +140,55 @@ ul li::before {
     transform: translateY(-3px);
 }
 
-
-/* ==== 테이블 및 프로그레스 바 (기술 스택) ==== */
-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+/* -- 기술 스택 섹션 -- */
+.skill-category {
+    margin-bottom: 30px; /* 카테고리 사이의 간격 */
 }
-th, td { border: 1px solid var(--light-gray); padding: 12px 15px; text-align: left; }
-th { background-color: var(--primary-color); color: white; font-weight: bold; }
-tr:nth-child(even) { background-color: #f2f2f2; }
 
-progress { width: 80%; height: 20px; border: none; border-radius: 10px; }
-progress::-webkit-progress-bar { background-color: var(--light-gray); border-radius: 10px; }
-progress::-webkit-progress-value { background-color: var(--primary-color); border-radius: 10px; }
-progress::-moz-progress-bar { background-color: var(--primary-color); border-radius: 10px; }
+.skill-category h3 {
+    text-align: left; /* 카테고리 제목은 왼쪽 정렬 */
+    font-size: 1.3em;
+    color: var(--dark-gray);
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary-color);
+    padding-left: 10px;
+}
+
+.skill {
+    display: flex; /* 기술 이름과 막대 그래프를 가로로 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+    margin-bottom: 12px; /* 각 기술 항목 사이의 간격 */
+}
+
+.skill span {
+    width: 180px; /* 기술 이름이 차지할 고정 너비 */
+    font-weight: bold;
+    color: #555;
+    padding-right: 15px; /* 이름과 막대 사이 간격 */
+}
+
+.skill progress {
+    width: 100%; /* 남은 공간을 모두 차지 */
+    height: 22px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+}
+.skill progress::-webkit-progress-bar {
+    background-color: var(--light-gray);
+    border-radius: 10px;
+}
+.skill progress::-webkit-progress-value {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+    transition: width 0.5s ease-in-out; /* 부드러운 애니메이션 효과 */
+}
+.skill progress::-moz-progress-bar {
+    background-color: var(--primary-color);
+    border-radius: 10px;
+}
 
 
-/* ==== 프로젝트 섹션 ==== */
+/* -- 프로젝트 섹션 -- */
 details {
     background-color: #fff;
     border: 1px solid var(--light-gray);
@@ -178,11 +207,19 @@ summary {
     padding: 0 25px 20px 25px; /* 내부 패딩 조정 */
     border-top: 1px solid var(--light-gray); /* 제목과 내용 구분선 */
 }
-.project-item ul { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
-.project-item ul li::before { content: '✅'; }
+.project-item ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 15px;
+}
+/* 프로젝트 기술 스택 리스트 아이콘은 다른 모양으로 지정 */
+.project-item ul li::before {
+    content: '✅';
+}
 
 
-/* ==== 기타 HTML 태그 스타일 ==== */
+/* -- 기타 HTML 태그 스타일 -- */
 blockquote {
     background-color: #FFFBEF;
     border-left: 5px solid var(--primary-color);
