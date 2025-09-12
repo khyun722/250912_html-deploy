@@ -11,42 +11,42 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     <link rel="manifest" href="site.webmanifest">
-    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <title>My Page</title>
 
     <!-- OG TAG -->
      <!-- 1. title -->
-    <meta property="og:title" content="한경현의 첫 배포 페이지" />
+    <meta property="og:title" content="한경현의 페이지" />
     <!-- 2. description -->
     <meta
       property="og:description"
-      content="김자바는 최고의 백엔드 엔지니어입니다"
+      content="안녕하세요"
     />
     <!-- 3. image -->
-    <meta property="og:image" content="./preview.png" />
+    <meta property="og:image" content="./쿼카사진.png"/>
 </head>
 <body>
 
   <header>
     <nav>
       <ul>
-        <li><a href="#about">🙋‍♂️ 소개 (About)</a></li>
-        <li><a href="#skills">🛠️ 기술 스택 (Skills)</a></li>
-        <li><a href="#projects">🚀 프로젝트 (Projects)</a></li>
-        <li><a href="#contact">✉️ 연락처 (Contact)</a></li>
+        <li><a href="#intro">🏠 홈</a></li>
+        <li><a href="#about">🙋‍♂️ 소개</a></li>
+        <li><a href="#skills">🛠️ 기술 스택</a></li>
+        <li><a href="#projects">🚀 프로젝트</a></li>
+        <li><a href="#contact">✉️ 연락처</a></li>
       </ul>
     </nav>
   </header>
-  <hr>
 
   <main>
-    <section id="intro">
+    <section id="intro" class="container">
       <h1>안녕하세요, [이름]입니다.</h1>
       <p>논리적인 세상을 만드는 <strong>풀스택 개발자</strong>입니다. 👨‍💻</p>
       <a href="#projects" class="cta-button">프로젝트 보러가기</a>
     </section>
-    <hr>
 
-    <section id="about">
+    <section id="about" class="container">
       <h2>🙋‍♂️ 소개 (About Me)</h2>
       <img src="your-profile-picture.jpg" alt="[이름] 프로필 사진" width="200">
       <p>
@@ -56,12 +56,12 @@
         "꾸준히 배우고 성장하며, 사용자에게 가치있는 서비스를 만드는 개발자가 되는 것이 목표입니다."
       </blockquote>
     </section>
-    <hr>
 
-    <section id="skills">
+    <section id="skills" class="container">
       <h2>🛠️ 기술 스택 (Skills)</h2>
       <p>제가 다룰 수 있는 기술 스택입니다. 숙련도를 막대 그래프로 표현해 보았습니다.</p>
-      <table border="1"> <thead>
+      <table>
+        <thead>
           <tr>
             <th>분야 (Category)</th>
             <th>기술 (Technology)</th>
@@ -92,14 +92,14 @@
         </tbody>
       </table>
     </section>
-    <hr>
 
-    <section id="projects">
+    <section id="projects" class="container">
       <h2>🚀 프로젝트 (Projects)</h2>
       <details>
         <summary><strong>프로젝트 1: 개인 블로그 개발 (클릭하여 상세보기)</strong></summary>
-        <article class="project-item">
+        <div class="project-item">
           <img src="project1-thumbnail.jpg" alt="개인 블로그 프로젝트 썸네일">
+          <h3>개인 블로그 개발</h3>
           <p>Spring Boot와 JPA를 사용하여 개발한 개인 기술 블로그입니다. 게시글 CRUD 기능과 태그별 검색 기능을 구현했습니다.</p>
           <h4>사용한 기술 (Tech Stack)</h4>
           <ul>
@@ -107,23 +107,23 @@
           </ul>
           <a href="[GitHub Repository 주소]" target="_blank">코드 보기 (GitHub)</a>
           <a href="[배포된 웹사이트 주소]" target="_blank">사이트 보기 (Live Demo)</a>
-        </article>
+        </div>
       </details>
-      <br> <details>
+      <details>
         <summary><strong>프로젝트 2: 쇼핑몰 웹사이트 클론 코딩 (클릭하여 상세보기)</strong></summary>
-        <article class="project-item">
+        <div class="project-item">
+          <h3>쇼핑몰 웹사이트 클론 코딩</h3>
           <p>기존의 쇼핑몰 웹사이트를 분석하여 주요 기능(회원가입, 로그인, 상품 조회)을 클론 코딩하며 웹 개발의 전반적인 흐름을 익혔습니다.</p>
           <h4>사용한 기술 (Tech Stack)</h4>
           <ul>
             <li>Java, JSP, Servlet, OracleDB</li>
           </ul>
           <a href="[GitHub Repository 주소]" target="_blank">코드 보기 (GitHub)</a>
-        </article>
+        </div>
       </details>
     </section>
-    <hr>
 
-    <section id="contact">
+    <section id="contact" class="container">
       <h2>✉️ 연락처 (Contact Me)</h2>
       <p>아래 채널을 통해 편하게 연락주세요. 언제나 환영합니다! 👋</p>
       <ul>
@@ -134,9 +134,8 @@
     </section>
   </main>
   
-  <hr>
   <footer>
-    <p>&copy; 2025 [이름]. All rights reserved.</p>
+    <p>&copy; 2025 [한경현]. All rights reserved.</p>
   </footer>
 
 </body>

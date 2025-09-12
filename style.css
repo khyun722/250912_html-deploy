@@ -1,0 +1,212 @@
+/* ==== 기본 스타일 및 색상 변수 ==== */
+:root {
+    --primary-color: #FACE5E; /* 메인 색상 */
+    --text-color: #333;
+    --background-color: #f9f9f9;
+    --light-gray: #eee;
+    --dark-gray: #666;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+
+/* ==== 공통 컨테이너 스타일 (핵심) ==== */
+/* 큼직한 라운드 사각형 카드 */
+.container {
+    max-width: 900px;
+    margin: 30px auto; /* 카드 사이의 수직 간격 */
+    padding: 40px;
+    background-color: #fff;
+    border-radius: 20px; /* 둥근 모서리 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* 그림자 효과 */
+}
+
+
+/* ==== 헤더 및 네비게이션 ==== */
+header {
+    background-color: var(--primary-color);
+    padding: 20px 0;
+    text-align: center;
+    border-bottom: 5px solid #e0b44b;
+    margin-bottom: 30px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* 가로 정렬 */
+    justify-content: center;
+    gap: 30px; /* 링크 사이 간격 */
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1em;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+header nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* ==== 타이포그래피 (글자 스타일) ==== */
+h1, h2, h3, h4 {
+    color: #4A4A4A;
+    margin-bottom: 25px;
+}
+
+h1 {
+    font-size: 2.8em;
+    text-align: center;
+}
+h2 {
+    font-size: 2em;
+    text-align: center;
+    border-bottom: 3px solid var(--primary-color); /* 제목 밑에 포인트 색상 선 */
+    padding-bottom: 10px;
+}
+h3 { font-size: 1.4em; }
+h4 { font-size: 1.1em; }
+
+
+/* ==== 개별 요소 스타일 ==== */
+img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    display: block;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+p {
+    margin-bottom: 1em;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+ul li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+ul li::before {
+    content: '⭐';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-size: 0.9em;
+}
+
+/* ==== 인트로 섹션 전용 스타일 ==== */
+#intro { text-align: center; }
+#intro p { font-size: 1.3em; color: var(--dark-gray); margin-bottom: 30px; }
+.cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.cta-button:hover {
+    background-color: #e0b44b;
+    transform: translateY(-3px);
+}
+
+
+/* ==== 테이블 및 프로그레스 바 (기술 스택) ==== */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+th, td { border: 1px solid var(--light-gray); padding: 12px 15px; text-align: left; }
+th { background-color: var(--primary-color); color: white; font-weight: bold; }
+tr:nth-child(even) { background-color: #f2f2f2; }
+
+progress { width: 80%; height: 20px; border: none; border-radius: 10px; }
+progress::-webkit-progress-bar { background-color: var(--light-gray); border-radius: 10px; }
+progress::-webkit-progress-value { background-color: var(--primary-color); border-radius: 10px; }
+progress::-moz-progress-bar { background-color: var(--primary-color); border-radius: 10px; }
+
+
+/* ==== 프로젝트 섹션 ==== */
+details {
+    background-color: #fff;
+    border: 1px solid var(--light-gray);
+    border-radius: 12px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+summary {
+    font-weight: bold;
+    padding: 18px 25px;
+    cursor: pointer;
+    outline: none;
+    font-size: 1.1em;
+}
+.project-item {
+    padding: 0 25px 20px 25px; /* 내부 패딩 조정 */
+    border-top: 1px solid var(--light-gray); /* 제목과 내용 구분선 */
+}
+.project-item ul { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 15px; }
+.project-item ul li::before { content: '✅'; }
+
+
+/* ==== 기타 HTML 태그 스타일 ==== */
+blockquote {
+    background-color: #FFFBEF;
+    border-left: 5px solid var(--primary-color);
+    padding: 15px 20px;
+    margin: 20px 0;
+    font-style: italic;
+    color: var(--dark-gray);
+    border-radius: 8px;
+}
+
+mark {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+
+/* ==== 푸터 ==== */
+footer {
+    text-align: center;
+    padding: 30px;
+    background-color: var(--dark-gray);
+    color: white;
+    font-size: 0.9em;
+    margin-top: 50px;
+}
