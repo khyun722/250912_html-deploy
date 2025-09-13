@@ -237,6 +237,58 @@ mark {
     border-radius: 3px;
 }
 
+/* ================================== */
+/* ==== 반응형 디자인 (미디어 쿼리) ==== */
+/* ================================== */
+
+/* 화면 너비가 768px 이하일 때 (태블릿, 모바일) 적용될 스타일 */
+@media (max-width: 768px) {
+
+  /* 1. 카드(컨테이너)의 좌우 여백을 줄여서 내용이 더 넓게 보이게 합니다. */
+  .container {
+    padding: 20px;
+  }
+
+  /* 2. 제목들의 크기를 모바일 화면에 맞게 줄입니다. */
+  h1 {
+    font-size: 2.2em;
+  }
+  h2 {
+    font-size: 1.7em;
+  }
+
+  /* 3. 헤더 네비게이션 링크 사이의 간격을 줄입니다. */
+  header nav ul {
+    gap: 15px;
+  }
+  header nav a {
+    font-size: 1em;
+    padding: 8px 10px;
+  }
+  
+  /* 4. 기술 스택에서 이름과 막대 그래프가 위아래로 쌓이도록 변경합니다. */
+  .skill {
+    flex-direction: column; /* 가로 정렬을 세로 정렬로 변경 */
+    align-items: flex-start; /* 왼쪽 정렬 */
+    gap: 8px; /* 이름과 막대 사이 간격 */
+  }
+
+  .skill span {
+    width: auto; /* 고정 너비를 해제하여 자연스럽게 크기 조절 */
+    padding-right: 0;
+  }
+
+  /* 5. 인트로 섹션의 버튼과 텍스트 크기를 살짝 줄입니다. */
+  #intro p {
+    font-size: 1.1em;
+  }
+  .cta-button {
+    font-size: 1em;
+    padding: 12px 25px;
+  }
+
+}
+
 
 /* ==== 푸터 ==== */
 footer {
